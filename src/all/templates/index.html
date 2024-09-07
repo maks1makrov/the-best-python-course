@@ -1,0 +1,163 @@
+{% extends "main.html" %}
+
+{% block title%}login{% endblock %}
+
+
+{% block content%}
+<section class="container py-5">
+    <h1 class="display-4 text-center">Бесплатный курс<br>«Основы Python»</h1>
+    <div class="text-center mb-4">
+        <p>Запишитесь на&nbsp;бесплатный курс и&nbsp;пройдите <span class="font-weight-bold">10</span>&nbsp;уроков, решите <span class="font-weight-bold">100+</span>&nbsp;практических задач и&nbsp;сделайте <span class="font-weight-bold">3</span>&nbsp;аналитических проекта для&nbsp;портфолио</p>
+    </div>
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-primary mr-2" data-pandas-subscription="">Записаться</button>
+        <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center">
+                <div class="card-body">
+                    <div class="icon icon--hat mb-3"></div>
+                    <h5 class="card-title">Идеально для начинающих</h5>
+                    <p class="card-text">Подробно объясняем все с&nbsp;самого нуля на&nbsp;понятных примерах</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center">
+                <div class="card-body">
+                    <div class="icon icon--bookmark mb-3"></div>
+                    <h5 class="card-title">Упор на&nbsp;практику</h5>
+                    <p class="card-text">Каждый урок сопровождается 100+ задачами и&nbsp;кейсами из&nbsp;бизнеса</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center">
+                <div class="card-body">
+                    <div class="icon icon--interviews mb-3"></div>
+                    <h5 class="card-title">Поддержка в&nbsp;чате</h5>
+                    <p class="card-text">Наши преподаватели помогут вам освоить материал или&nbsp;решить задачу</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card h-100 text-center">
+                <div class="card-body">
+                    <div class="icon icon--case mb-3"></div>
+                    <h5 class="card-title">Комплексный подход</h5>
+                    <p class="card-text">Комбинируем видео лекции, текстовые уроки, задачи и&nbsp;кейсы</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #FFA500;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: left;
+        }
+        .accordion {
+            margin-top: 20px;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .card-header {
+            padding: 10px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card-header:hover {
+            background-color: #f1f1f1;
+        }
+        .card-body {
+            padding: 20px;
+            display: none;
+        }
+        .icon {
+            font-size: 18px;
+        }
+        .card.active .card-body {
+            display: block;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var headers = document.querySelectorAll('.card-header');
+            headers.forEach(function(header) {
+                header.addEventListener('click', function() {
+                    var card = header.parentElement;
+                    card.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Программа курса</h2>
+        <div class="accordion" id="courseProgram">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    Введение
+                    <span class="icon">+</span>
+                </div>
+                <div class="card-body">
+                    тры два раз
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    Переменные и базовые типы данных
+                    <span class="icon">+</span>
+                </div>
+                <div class="card-body">
+                    <!-- Content for Переменные и базовые типы данных -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    Сложные типы данных
+                    <span class="icon">+</span>
+                </div>
+                <div class="card-body">
+                    <!-- Content for Сложные типы данных -->
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    Дополнительные типы данных
+                    <span class="icon">+</span>
+                </div>
+                <div class="card-body">
+                    <!-- Content for Дополнительные типы данных -->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

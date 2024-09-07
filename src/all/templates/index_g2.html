@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн курс по Python</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+          background-color: #FFFFFF;
+        }
+        .container {
+          background-color: #fff;
+          border-radius: 10px;
+
+          padding: 20px;
+          margin-top: 50px;
+        }
+        .nav-tabs .nav-link {
+          color: #495057;
+          background-color: transparent;
+          border: none;
+          border-bottom: 3px solid transparent;
+          border-radius: 0;
+        }
+        .nav-tabs .nav-link.active {
+          border-color: #007bff;
+        }
+        .tab-content {
+          padding-top: 20px;
+        }
+        .tab-pane p {
+          margin-bottom: 10px;
+        }
+        .btn-primary {
+          background-color: #007bff;
+          border-color: #007bff;
+        }
+        .btn-primary:hover {
+          background-color: #0056b3;
+          border-color: #0056b3;
+        }
+        .block {
+          background-color: #f2f2f2;
+          border-radius: 5px;
+          padding: 15px;
+          margin-bottom: 20px;
+        }
+        .block h3 {
+          color: #007bff;
+        }
+
+            h2 {
+                text-align: left;
+            }
+            .accordion {
+                margin-top: 20px;
+            }
+            .cardd {
+                background-color: white;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+            .cardd-header {
+                padding: 10px 20px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .cardd-header:hover {
+                background-color: #f1f1f1;
+            }
+            .cardd-body {
+                padding: 20px;
+                display: none;
+            }
+            .icon {
+                font-size: 18px;
+            }
+            .cardd.active .cardd-body {
+                display: block;
+            }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var headers = document.querySelectorAll('.cardd-header');
+            headers.forEach(function(header) {
+                header.addEventListener('click', function() {
+                    var cardd = header.parentElement;
+                    cardd.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="d-flex justify-content-center">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#free-course">Бесплатный курс</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#registration-form">Запись на курс</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#paid-course">Платный курс</a>
+        </li>
+    </ul>
+</div>
+
+<div class="container">
+
+
+    <div class="tab-content mt-3">
+        <div id="free-course" class="tab-pane fade show active">
+
+
+            <h1 class="display-4 text-left">Бесплатный курс<br>«Основы Python»</h1>
+            <div class="text-left mb-4">
+                <p>Запишитесь на&nbsp;бесплатный курс и&nbsp;пройдите <span class="font-weight-bold">8</span>&nbsp;уроков,<br>
+                    с опытным преподавателем. Длительность каждого урока - 2 часа.</p>
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+                <button class="btn btn-primary mr-2">Записаться</button>
+                <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <div class="icon icon--interviews mb-3"></div>
+                            <h5 class="card-title">Live-обучение</h5>
+                            <p class="card-text">Никаких записей уроков, только живые лекции с опытным
+                                преподавателем.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <div class="icon icon--case mb-3"></div>
+                            <h5 class="card-title">Online-обучение</h5>
+                            <p class="card-text">Курс проводится онлайн, поэтому вы можете его пройти с любой точки
+                                мира.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <div class="icon icon--hat mb-3"></div>
+                            <h5 class="card-title">Идеально для начинающих</h5>
+                            <p class="card-text">Подробно объясняем все с&nbsp;самого нуля на&nbsp;понятных примерах</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <div class="icon icon--bookmark mb-3"></div>
+                            <h5 class="card-title">Упор на&nbsp;практику</h5>
+                            <p class="card-text">Каждый&nbsp;урок сопровождается теоретическими основами и практическим
+                                закреплением</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-24 col-lg-12 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <div class="icon icon--bookmark mb-3"></div>
+                            <h5 class="card-title">И самое главное</h5>
+                            <p class="card-text">Это бесплатный курс, который даст вам возможность понять, подходит ли
+                                вам программирование и стоит ли продолжать обучение на платной основе. По статистике,
+                                только 20%-30% выпускников платных курсов устраиваются на работу. Такой низкий процент
+                                объясняется тем, что студенты сначала платят деньги (пройдя лишь одно пробное занятие
+                                уровня начальной школы), а потом понимают, что это им не интересно, сложно, или они
+                                просто не готовы к этому.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="container py-5 bg-warning p-3">
+                <h2>Программа курса</h2>
+                <div class="accordion" id="courseProgram">
+                    <div class="cardd">
+                        <div class="cardd-header" id="headingOne">
+                            Введение
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="cardd-body">
+                            тры два раз
+                        </div>
+                    </div>
+                    <div class="cardd">
+                        <div class="cardd-header" id="headingTwo">
+                            Переменные и базовые типы данных
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="cardd-body">
+                            <!-- Content for Переменные и базовые типы данных -->
+                        </div>
+                    </div>
+                    <div class="cardd">
+                        <div class="cardd-header" id="headingThree">
+                            Сложные типы данных
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="cardd-body">
+                            <!-- Content for Сложные типы данных -->
+                        </div>
+                    </div>
+                    <div class="cardd">
+                        <div class="cardd-header" id="headingFour">
+                            Дополнительные типы данных
+                            <span class="icon">+</span>
+                        </div>
+                        <div class="cardd-body">
+                            <!-- Content for Дополнительные типы данных -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br> <br> <br> <br>
+
+            <div class="col-md-24 col-lg-12 mb-4">
+                <div class="card h-100 text-left shadow-lg">
+                    <div class="card-body">
+                        <div class="icon icon--bookmark mb-3"></div>
+                        <h3>Как будет проходить курс </h3>
+                        <ul>
+                            <li>Продолжительность курса: 1 месяц (по 2 занятия в неделю по 2 часа)</li>
+                            <li>Участвовать можно и с телефона или планшета, но для закрепления полученных знаний мы
+                                рекомендуем использовать компьютер или ноутбук.
+                            </li>
+                            <li>Курс проводится онлайн через Google Meet.</li>
+                            <li>Для обсуждения и вопросов доступен Telegram чат.</li>
+                            <li>В начале занятия разбираем домашнее задание и вопросы от слушателей курса, затем
+                                переходим к теории, совмещенной с практикой.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-24 col-lg-12 mb-4">
+                <div class="card h-100 text-left shadow-lg">
+                    <div class="card-body">
+                        <div class="icon icon--bookmark mb-3"></div>
+                        <h3>Что дальше?</h3>
+                        <p class="card-text">После успешного прохождения бесплатного курса по основам Python - продолжите обучение на
+                            углубленном
+                            курсе по Python, после окончания которого мы будем с вами до момента вашего
+                            трудоустройства
+                        <a class="nav-link" data-toggle="tab" href="#paid-course">Платный курс</a></p>
+                    </div>
+                </div>
+            </div>
+            <a href="#registration-form" class="btn btn-primary">Записаться на курс</a>
+        </div>
+        <div id="registration-form" class="tab-pane fade">
+            <h3>Форма для записи на курс</h3>
+            <!-- Вставьте здесь код вашей формы для записи на курс -->
+        </div>
+        <div id="paid-course" class="tab-pane fade">
+            <div class="block">
+                <h3>Платный курс по Python</h3>
+                <p>Продолжительность курса: 4 месяца</p>
+                <p>Еженедельные встречи с выпускниками до момента их трудоустройства</p>
+                <p>Разбор собеседований</p>
+                <p>Стоимость курса: $449</p>
+            </div>
+            <a href="#registration-form" class="btn btn-primary">Записаться на курс</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
