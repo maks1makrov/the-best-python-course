@@ -1,0 +1,265 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: beer_django_api
+    volumes:
+      - ./src:/src
+    ports:
+      - 8000:8000
+    env_file:
+      - db_keys_for_sand.txt
+    #    depends_on:
+    #      - db
+    #    command: bash -c "python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "gunicorn -w 2 src.wsgi:application -b 0.0.0.0:8000"
+
+  rabbit:
+    hostname: rabbit
+    image: rabbitmq:management
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=mypass
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  selery_user_0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_user_0
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5555:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.generate_and_other_beer_user_0 -c 1 --loglevel=info -E -Q generate_and_other_beer_user_0"
+
+  selery_user_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_user_1
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5556:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.generate_and_other_beer_user_1 -c 1 --loglevel=info -E -Q generate_and_other_beer_user_1"
+
+  selery_user_2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_user_2
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5557:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.generate_and_other_beer_user_2 -c 1 --loglevel=info -E -Q generate_and_other_beer_user_2"
+
+
+  selery_rf_0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_0
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5558:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_request_beer_0 -c 1 --loglevel=info -E -Q rf_request_beer_0"
+
+
+
+  selery_rf_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_1
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5559:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_request_beer_1 -c 1 --loglevel=info -E -Q rf_request_beer_1"
+
+
+  selery_rf_check_request_0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_check_request_0
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5560:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_check_request_beer_0 -c 1 --loglevel=info -E -Q rf_check_request_beer_0"
+
+
+  selery_rf_check_request_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_check_request_1
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5561:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_check_request_beer_1 -c 1 --loglevel=info -E -Q rf_check_request_beer_1"
+
+
+  selery_rf_get_codes_beer_0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_get_codes_beer_0
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5562:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_get_codes_beer_0 -c 1 --loglevel=info -E -Q rf_get_codes_beer_0"
+
+
+
+  selery_rf_get_codes_beer_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_get_codes_beer_1
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5563:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_get_codes_beer_1 -c 1 --loglevel=info -E -Q rf_get_codes_beer_1"
+
+
+
+  selery_rf_utilisation_beer_0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_utilisation_beer_0
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+    ports:
+      - 5564:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_utilisation_beer_0 -c 1 --loglevel=info -E -Q rf_utilisation_beer_0"
+
+
+
+  selery_rf_utilisation_beer_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_utilisation_beer_1
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+#    ports:
+#      - 5564:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_utilisation_beer_1 -c 1 --loglevel=info -E -Q rf_utilisation_beer_1"
+
+
+
+  selery_rf_check_utilisation_beer_0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_check_utilisation_beer_0
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+#    ports:
+#      - 5564:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_check_utilisation_beer_0 -c 1 --loglevel=info -E -Q rf_check_utilisation_beer_0"
+
+
+
+  selery_rf_check_utilisation_beer_1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: celery_w_beer_api_rf_check_utilisation_beer_1
+    volumes:
+      - ./src:/src
+    depends_on:
+      - rabbit
+#    ports:
+#      - 5564:5555
+    env_file:
+      #      - db_keys_for_local.txt
+      - db_keys_for_sand.txt
+    #    command: celery -A first worker -c 5 -l info -B -E
+    command: bash -c "celery -A src worker -n worker.rf_check_utilisation_beer_1 -c 1 --loglevel=info -E -Q rf_check_utilisation_beer_1"
