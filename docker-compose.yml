@@ -15,4 +15,4 @@ services:
     #    depends_on:
     #      - db
     #    command: bash -c "python manage.py runserver 0.0.0.0:8000"
-    command: bash -c "gunicorn -w 2 src.wsgi:application -b 0.0.0.0:8000"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn -w 2 src.wsgi:application -b 0.0.0.0:8000"
