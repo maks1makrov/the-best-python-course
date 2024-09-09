@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: beer_django_api
+    container_name: django_api_tmp
     volumes:
       - ./src:/src
     ports:

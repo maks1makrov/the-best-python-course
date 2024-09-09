@@ -15,7 +15,8 @@ class AllMain(View):
 
     def get(self, request):
         context = {'form': EnrollmentForm()}
-        return render(request, 'Copy_of_Max.html', context)
+        # return render(request, 'Copy_of_Max.html', context)
+        return render(request, 'index_g5.html', context)
 
 
 class EnrollmentView(View):
