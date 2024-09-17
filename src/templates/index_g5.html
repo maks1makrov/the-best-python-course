@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн курс по Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="free-course-tab" data-toggle="tab" href="#free-course" role="tab"
+               aria-controls="free-course" aria-selected="true">Бесплатный курс</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="registration-form-tab" data-toggle="tab" href="#registration-form" role="tab"
+               aria-controls="registration-form" aria-selected="false">Запись на курс</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="paid-course-tab" data-toggle="tab" href="#paid-course" role="tab"
+               aria-controls="paid-course" aria-selected="false">Платный курс</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-3">
+        <div id="free-course" class="tab-pane fade show active" role="tabpanel" aria-labelledby="free-course-tab">
+            <h1 class="display-4">Бесплатный курс<br>«Основы Python»</h1>
+            <p>Запишитесь на бесплатный курс и пройдите <strong>8</strong> уроков с опытным преподавателем. Длительность
+                каждого урока - 2 часа.</p>
+            <div class="mb-4">
+                <a href="#registration-form" class="btn btn-primary mr-2" id="registrationFormLink1">Записаться</a>
+                <a class="btn btn-secondary" href="#program">Посмотреть программу</a>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Live-обучение</h5>
+                            <p class="card-text">Никаких записей уроков, только живые лекции с опытным
+                                преподавателем.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Online-обучение</h5>
+                            <p class="card-text">Курс проводится онлайн, поэтому вы можете его пройти с любой точки
+                                мира.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Идеально для начинающих</h5>
+                            <p class="card-text">Подробно объясняем все с самого нуля на понятных примерах</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">Упор на практику</h5>
+                            <p class="card-text">Каждый урок сопровождается теоретическими основами и практическим
+                                закреплением</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mb-4">
+                    <div class="card h-100 text-left shadow-lg">
+                        <div class="card-body">
+                            <h5 class="card-title">И самое главное</h5>
+                            <p class="card-text">Этот бесплатный курс поможет вам определить, подходит ли вам
+                                программирование и стоит ли продолжать обучение на платной основе. По статистике, только
+                                20-30% выпускников платных курсов находят работу. Такой низкий процент объясняется тем,
+                                что студенты сначала оплачивают обучение (после всего одного пробного занятия начального
+                                уровня), а затем осознают, что программирование им не интересно, слишком сложно или они
+                                просто не готовы к этому.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion mt-4" id="courseProgram">
+                <h2>Программа курса</h2>
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                1. Введение в Python
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Установка Python и настройка среды разработки (IDE)</li>
+                                <li>Основные принципы работы интерпретатора</li>
+                                <li>Базовые синтаксические конструкции (выражения, операторы, комментарии)</li>
+                                <li>Введение в типы данных (числа, строки, булевы значения)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                2. Структуры данных
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Списки (list)</li>
+                                <li>Кортежи (tuple)</li>
+                                <li>Множества (set)</li>
+                                <li>Словари (dict)</li>
+                                <li>Встроенные функции для работы с структурами данных</li>
+                                <li>Генераторы списков и словарей</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                3. Управляющие конструкции
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                         data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Условные выражения (if, elif, else)</li>
+                                <li>Циклы (for, while)</li>
+                                <li>Встроенные функции для управления циклом (break, continue, pass)</li>
+                                <li>Работа с диапазонами (range)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                4. Функции и модули
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Определение и вызов функций</li>
+                                <li>Аргументы и параметры функций (позиционные, именованные)</li>
+                                <li>Возвращаемые значения функций</li>
+                                <li>Область видимости переменных</li>
+                                <li>Импорт модулей и работа с ними</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                5. Работа с файлами
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Открытие и закрытие файлов</li>
+                                <li>Чтение данных из файлов (read, readline, readlines)</li>
+                                <li>Запись данных в файлы (write, writelines)</li>
+                                <li>Использование контекстных менеджеров (with)</li>
+                                <li>Обработка исключений при работе с файлами</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                6. ООП в Python
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Основные концепции ООП (классы, объекты, атрибуты, методы)</li>
+                                <li>Создание классов и объектов</li>
+                                <li>Конструктор класса (__init__)</li>
+                                <li>Наследование</li>
+                                <li>Инкапсуляция</li>
+                                <li>Полиморфизм</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSeven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                ООП в Python часть 2
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven"
+                         data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Обработка и создание собственных исключений</li>
+                                <li>Геттеры и сеттеры</li>
+                                <li>Статические и классовые методы</li>
+                                <li>Наследование и множественное наследование</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingEight">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                Создание простого веб-сайта на Django
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                         data-parent="#courseProgram">
+                        <div class="card-body">
+                            <ul>
+                                <li>Установка и настройка Django</li>
+                                <li>Создание и настройка нового проекта Django</li>
+                                <li>Создание приложений в Django</li>
+                                <li>Работа с моделями и базой данных (ORM Django)</li>
+                                <li>Создание и настройка маршрутов (URL)</li>
+                                <li>Работа с шаблонами (templates)</li>
+                                <li>Основы админ-панели Django</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card h-100 text-left shadow-lg mt-4">
+                <div class="card-body">
+                    <h3>Как будет проходить курс</h3>
+                    <br>
+                    <p><strong>Продолжительность курса</strong>: 1 месяц (по 2 занятия в неделю по 2 часа).</p>
+                    <p><strong>Устройства</strong>: Участвовать можно с телефона или планшета, но для закрепления
+                        полученных знаний мы рекомендуем использовать компьютер или ноутбук.</p>
+                    <p><strong>Формат</strong>: Курс проводится онлайн через Google Meet.</p>
+                    <p><strong>Обсуждение и вопросы</strong>: Для обсуждения и вопросов доступен чат в Telegram.</p>
+                    <p><strong>Структура занятий</strong>:</p>
+                    <ul>
+                        <li>В начале занятия разбираем домашнее задание и вопросы от слушателей курса.</li>
+                        <li>Затем переходим к теории, совмещенной с практикой.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card h-100 text-left shadow-lg mt-4">
+                <div class="card-body">
+                    <h3>Что дальше?</h3>
+                    <p class="card-text">После успешного завершения бесплатного курса по основам Python вы сможете
+                        продолжить обучение на углубленном курсе. По окончании углубленного курса мы будем сопровождать
+                        вас до момента трудоустройства.
+                        <a class="btn btn-primary mr-2" id="paidCourseLink1" href="#paid-course">подробности тут</a></p>
+                </div>
+            </div>
+            <div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-primary mr-2" id="registrationFormLink2" href="#registration-form">Записаться
+                            на БЕСПЛАТНЫЙ курс</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="registration-form" class="tab-pane fade" role="tabpanel" aria-labelledby="registration-form-tab">
+            <h1>Форма записи на курс</h1>
+            <form method="post" action="{% url 'enroll' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" class="form-control" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта <span class="text-danger">*</span></label>
+                    <input type="email" id="email" class="form-control required-field" name="email">
+                    <small class="form-text text-muted">Заполните хотя бы одно из полей: электронная почта, телефон или
+                        другой способ связи.</small>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон <span class="text-danger">*</span></label>
+                    <input type="tel" id="phone" class="form-control required-field" name="phone">
+                    <input type="hidden" name="phone_full" id="phone_full">
+                    <small class="form-text text-muted">Заполните хотя бы одно из полей: электронная почта, телефон или
+                        другой способ связи.</small>
+                </div>
+                <div class="form-group">
+                    <label for="message">Другой способ связи, пожелания, предложения <span class="text-danger">*</span></label>
+                    <textarea id="message" class="form-control required-field" name="message" rows="4"></textarea>
+                    <small class="form-text text-muted">Заполните хотя бы одно из полей: электронная почта, телефон или
+                        другой способ связи.</small>
+                </div>
+                <div class="form-group">
+                    <label for="course">Курс</label>
+                    <select id="course" class="form-control" name="course" required>
+                        <option value="basic_python">Основы Python</option>
+                        <option value="advanced_python">Продвинутый курс по Python</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Записаться</button>
+            </form>
+
+            <p class="mt-3">Или просто свяжитесь с нами через Instagram <a href="https://www.instagram.com/yourprofile">@yourprofile</a>
+                или в Telegram <a href="https://t.me/yourprofile">@yourprofile</a>.</p>
+        </div>
+        <div id="paid-course" class="tab-pane fade" role="tabpanel" aria-labelledby="paid-course-tab">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h3>Платный курс по Python</h3>
+                    <p>Продолжительность курса: 4 месяца</p>
+                    <p>Наш платный курс предназначен для тех, кто хочет глубоко изучить Python и стать профессиональным
+                        программистом.</p>
+
+                    <div class="row">
+                        <div class="col-md-12 mb-4">
+                            <div class="card h-100 text-left shadow-lg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Программа курса</h5>
+                                    <ul>
+                                        <li><strong>Основы Python:</strong> Углубленное изучение синтаксиса и основ
+                                            языка программирования.
+                                        </li>
+                                        <li><strong>Работа с данными:</strong> Обработка, анализ и визуализация данных с
+                                            помощью библиотек Pandas, NumPy и Matplotlib.
+                                        </li>
+                                        <li><strong>Веб-разработка:</strong> Создание веб-приложений с использованием
+                                            Django и Flask.
+                                        </li>
+                                        <li><strong>Работа с API:</strong> Создание и интеграция RESTful API.</li>
+                                        <li><strong>Тестирование и отладка:</strong> Методы и инструменты для
+                                            тестирования и отладки кода.
+                                        </li>
+                                        <li><strong>Проектная работа:</strong> Разработка и реализация собственного
+                                            проекта под руководством ментора.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-4">
+                            <div class="card h-100 text-left shadow-lg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Особенности курса</h5>
+                                    <ul>
+                                        <li><strong>Индивидуальный подход:</strong> Персональные консультации и
+                                            наставничество от опытных преподавателей.
+                                        </li>
+                                        <li><strong>Еженедельные встречи с выпускниками:</strong> Поддержка и советы от
+                                            бывших студентов до момента их трудоустройства.
+                                        </li>
+                                        <li><strong>Разбор собеседований:</strong> Подготовка к техническим интервью,
+                                            разбор типовых вопросов и задач.
+                                        </li>
+                                        <li><strong>Практические задания:</strong> Множество практических задач и
+                                            проектов для закрепления полученных знаний.
+                                        </li>
+                                        <li><strong>Сертификация:</strong> По окончании курса вы получите сертификат,
+                                            подтверждающий ваши навыки.
+                                        </li>
+                                        <li><strong>Сетевые мероприятия:</strong> Возможность участвовать в сетевых
+                                            мероприятиях и знакомиться с работодателями.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 mb-4">
+                            <div class="card h-100 text-left shadow-lg">
+                                <div class="card-body">
+                                    <h5 class="card-title">Стоимость курса</h5>
+                                    <p>Стоимость курса составляет $449. В эту сумму включены все учебные материалы,
+                                        доступ к записям занятий и поддержка преподавателей.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-center">
+                                <a class="btn btn-primary mr-2" id="registrationFormLink3" href="#registration-form">Записаться
+                                    на курс</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Переключение на вкладку "Платный курс"
+        document.getElementById('paidCourseLink1').addEventListener('click', function(e) {
+            e.preventDefault();
+            $('#myTab a[href="#paid-course"]').tab('show');
+        });
+
+        // Переключение на вкладку "Запись на курс"
+        document.getElementById('registrationFormLink1').addEventListener('click', function(e) {
+            e.preventDefault();
+            $('#myTab a[href="#registration-form"]').tab('show');
+        });
+        document.getElementById('registrationFormLink2').addEventListener('click', function(e) {
+            e.preventDefault();
+            $('#myTab a[href="#registration-form"]').tab('show');
+        });
+        document.getElementById('registrationFormLink3').addEventListener('click', function(e) {
+            e.preventDefault();
+            $('#myTab a[href="#registration-form"]').tab('show');
+        });
+        document.getElementById('registrationFormLink4').addEventListener('click', function(e) {
+            e.preventDefault();
+            $('#myTab a[href="#registration-form"]').tab('show');
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const phoneInputField = document.querySelector("#phone");
+        const phoneFullInput = document.querySelector("#phone_full");
+        const emailInputField = document.querySelector("#email");
+        const messageInputField = document.querySelector("#message");
+
+        const phoneInput = window.intlTelInput(phoneInputField, {
+            initialCountry: "ru",
+            preferredCountries: ["ru", "us", "gb"],
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+
+        const form = document.querySelector("form");
+        const requiredFields = document.querySelectorAll(".required-field");
+
+        requiredFields.forEach(function(field) {
+            field.addEventListener("input", function() {
+                validateForm();
+            });
+        });
+
+        function validateForm() {
+            const emailValue = emailInputField.value.trim();
+            const phoneValue = phoneInputField.value.trim();
+            const messageValue = messageInputField.value.trim();
+
+            if (emailValue === "" && phoneValue === "" && messageValue === "") {
+                requiredFields.forEach(function(field) {
+                    field.setCustomValidity("Заполните хотя бы одно из полей: электронная почта, телефон или другой способ связи.");
+                });
+            } else {
+                requiredFields.forEach(function(field) {
+                    field.setCustomValidity("");
+                });
+            }
+        }
+
+        form.addEventListener("submit", function(event) {
+            const emailValue = emailInputField.value.trim();
+            const phoneValue = phoneInputField.value.trim();
+            const messageValue = messageInputField.value.trim();
+
+            validateForm();
+
+            // Проверяем, заполнено ли поле телефона
+            if (phoneValue !== "") {
+                if (!phoneInput.isValidNumber()) {
+                    event.preventDefault();
+                    alert("Пожалуйста, введите корректный номер телефона.");
+                } else {
+                    phoneFullInput.value = phoneInput.getNumber();
+                }
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

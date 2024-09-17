@@ -22,14 +22,26 @@ class AllMain(View):
             context = {'form': EnrollmentForm()}
             # int('af')
             # return render(request, 'Copy_of_Max.html', context)
-            logger.error(f"os.path.join(BASE_DIR, 'templates_not_used') - {os.path.join(BASE_DIR, 'templates_not_used')}")
-            print(os.path.join(BASE_DIR, 'templates') )
+            # logger.error(f"os.path.join(BASE_DIR, 'templates_not_used') - {os.path.join(BASE_DIR, 'templates_not_used')}")
+            # print(os.path.join(BASE_DIR, 'templates') )
             return render(request, 'index_vital.html', context)
         except Exception as ex:
             logger.error(f'{ex.__str__()}')
             return redirect('enroll_error')
 
+class AllMainOld(View):
 
+    def get(self, request):
+        try:
+            context = {'form': EnrollmentForm()}
+            # int('af')
+            # return render(request, 'Copy_of_Max.html', context)
+            # logger.error(f"os.path.join(BASE_DIR, 'templates_not_used') - {os.path.join(BASE_DIR, 'templates_not_used')}")
+            # print(os.path.join(BASE_DIR, 'templates') )
+            return render(request, 'index_g5.html', context)
+        except Exception as ex:
+            logger.error(f'{ex.__str__()}')
+            return redirect('enroll_error')
 class EnrollmentView(View):
     def post(self, request):
         try:
