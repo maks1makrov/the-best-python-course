@@ -1,0 +1,37 @@
+# сache-control со сроком 1 неделя для js файлов
+<FilesMatch "\.(js)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+</FilesMatch>
+
+# сache-control со сроком 1 неделя для css файлов
+<FilesMatch "\.(css)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+</FilesMatch>
+
+# сache-control со сроком 1 неделя для woff файлов
+<FilesMatch "\.(woff)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+</FilesMatch>
+
+# сache-control со сроком 1 неделя для png файлов
+<FilesMatch "\.(png)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+</FilesMatch>
+
+# сache-control со сроком 1 неделя для jpg файлов
+<FilesMatch "\.(jpg)$">
+    Header set Cache-Control "max-age=604800, private, must-revalidate"
+</FilesMatch>
+
+# сжатие text, html, javascript, css, xml:
+<ifModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4.0[678] no-gzip
+    BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+    <ifmodule mod_gzip.c>
+        mod_gzip_on Yes
+        mod_gzip_item_include file \.js$
+        mod_gzip_item_include file \.css$
+    </ifmodule>
+</ifModule>
