@@ -8,8 +8,8 @@ services:
     container_name: django_api_tmp
     volumes:
       - ./src:/src
-    ports:
-      - 8000:8000
+#    ports:
+#      - 8000:8000
     env_file:
       - db_keys_for_sand.txt
     #    depends_on:
@@ -17,14 +17,14 @@ services:
 #    command: bash -c "python manage.py runserver 0.0.0.0:8000"
     command: bash -c "python manage.py makemigrations && python manage.py migrate && gunicorn -w 2 src.wsgi:application -b 0.0.0.0:8000"
 
-#
-#  nginx:
-#    image: nginx
-#    container_name: nginx
-#    ports:
-#      - 8000:8000
-#    depends_on:
-#      - web
-#    volumes:
-#      - ./config:/etc/nginx/conf.d #- делаем папку конфиг, там файл с расширением конф и закидываем туда пути
-#      - ./src:/src #- чтобы было откуда брать статику
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 8000:8000
+    depends_on:
+      - web
+    volumes:
+      - ./config:/etc/nginx/conf.d #- делаем папку конфиг, там файл с расширением конф и закидываем туда пути
+      - ./src:/src #- чтобы было откуда брать статику

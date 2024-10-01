@@ -299,7 +299,7 @@
         <br>
         <div id="registration-form" class="tab-pane fade" role="tabpanel" aria-labelledby="registration-form-tab">
             <h1>Форма записи на курс</h1>
-            <form method="post" action="{% url 'enroll' %}">
+            <form method="post" action="{% url 'old-enroll' %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="name">Имя</label>
