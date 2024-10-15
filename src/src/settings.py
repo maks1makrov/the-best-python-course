@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY_DJANGO')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 CSRF_TRUSTED_ORIGINS = ["http://localhost:8000", 'http://0.0.0.0:8000', "https://python4all.com"]
-ALLOWED_HOSTS = ["python4all.com", "localhost:8000", '0.0.0.0:8000']
+ALLOWED_HOSTS = ["127.0.0.1", '0.0.0.0:8000']
 CSRF_ALLOWED_ORIGINS = ["https://python4all.com"]
 
 # Application definition
