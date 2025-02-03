@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY_DJANGO')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 CSRF_TRUSTED_ORIGINS = ["http://localhost:8000", 'http://0.0.0.0:8000', "https://python4all.com"]
 ALLOWED_HOSTS = ["127.0.0.1", '0.0.0.0:8000', "localhost", "web"]
 CSRF_ALLOWED_ORIGINS = ["https://python4all.com"]
